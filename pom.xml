@@ -8,13 +8,13 @@
         <version>2.7.12</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.fitriarien</groupId>
+    <groupId>com.ramdan</groupId>
     <artifactId>training-karyawan</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>training-karyawan</name>
     <description>training-karyawan</description>
     <properties>
-        <java.version>17</java.version>
+        <java.version>11</java.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <oauth2.version>2.0.14.RELEASE</oauth2.version>
