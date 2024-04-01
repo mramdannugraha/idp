@@ -1,0 +1,1083 @@
+{
+	"info": {
+		"_postman_id": "898f6d26-0576-431c-9881-74315cac8bc4",
+		"name": "TrainingKaryawanApplication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23749626"
+	},
+	"item": [
+		{
+			"name": "Create Karyawan",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nama\": \"syarini\",\r\n    \"dob\": \"1996-01-01\",\r\n    \"status\": \"active\",\r\n    \"alamat\": \"jakarta\",\r\n    \"detailKaryawan\": {\r\n        \"nik\": \"123455\",\r\n        \"npwp\": \"12345677\"\r\n        }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/v1/idstar/karyawan/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"v1",
+						"idstar",
+						"karyawan",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Karyawan",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsib2F1dGgyLXJlc291cmNlIl0sInVzZXJfbmFtZSI6InJhbWRhbi5udWdyYWhhQGlkc3Rhci5jby5pZCIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJleHAiOjE3MTE5NjQxMDYsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiIsIlJPTEVfUkVBRCIsIlJPTEVfV1JJVEUiXSwianRpIjoiN2Y2OTgzNDItZjBmOS00NThlLTlkM2MtMGRjZGE0MDhjMmI1IiwiY2xpZW50X2lkIjoibXktY2xpZW50LXdlYiJ9._rSVQrarS04e2bWqLcoACbL3Cdf6Aw14XKWyUa17uaA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"id\": 1,\r\n    \"nama\": \"dam ubah\",\r\n    \"dob\": \"1996-01-01T00:00:00.000+00:00\",\r\n    \"status\": \"active\",\r\n    \"alamat\": \"jakarta\",\r\n    \"detailKaryawan\": {\r\n        \"id\": 1,\r\n            \"nik\": \"123455\",\r\n            \"npwp\": \"12345677\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/v1/idstar/karyawan/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"v1",
+						"idstar",
+						"karyawan",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Karyawan",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsib2F1dGgyLXJlc291cmNlIl0sInVzZXJfbmFtZSI6InJhbWRhbi5udWdyYWhhQGlkc3Rhci5jby5pZCIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJleHAiOjE3MTE5NjQxMDYsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiIsIlJPTEVfUkVBRCIsIlJPTEVfV1JJVEUiXSwianRpIjoiN2Y2OTgzNDItZjBmOS00NThlLTlkM2MtMGRjZGE0MDhjMmI1IiwiY2xpZW50X2lkIjoibXktY2xpZW50LXdlYiJ9._rSVQrarS04e2bWqLcoACbL3Cdf6Aw14XKWyUa17uaA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8181/api/v1/idstar/karyawan/list?page=0&size=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"v1",
+						"idstar",
+						"karyawan",
+						"list"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Karyawan by Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsib2F1dGgyLXJlc291cmNlIl0sInVzZXJfbmFtZSI6InJhbWRhbi5udWdyYWhhQGlkc3Rhci5jby5pZCIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJleHAiOjE3MTE5NjQxMDYsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiIsIlJPTEVfUkVBRCIsIlJPTEVfV1JJVEUiXSwianRpIjoiN2Y2OTgzNDItZjBmOS00NThlLTlkM2MtMGRjZGE0MDhjMmI1IiwiY2xpZW50X2lkIjoibXktY2xpZW50LXdlYiJ9._rSVQrarS04e2bWqLcoACbL3Cdf6Aw14XKWyUa17uaA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8181/api/v1/idstar/karyawan/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"v1",
+						"idstar",
+						"karyawan",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Karyawan",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/v1/idstar/karyawan/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"v1",
+						"idstar",
+						"karyawan",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Rekening",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsib2F1dGgyLXJlc291cmNlIl0sInVzZXJfbmFtZSI6InJhbWRhbi5udWdyYWhhQGlkc3Rhci5jby5pZCIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJleHAiOjE3MTE5NjQxMDYsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiIsIlJPTEVfUkVBRCIsIlJPTEVfV1JJVEUiXSwianRpIjoiN2Y2OTgzNDItZjBmOS00NThlLTlkM2MtMGRjZGE0MDhjMmI1IiwiY2xpZW50X2lkIjoibXktY2xpZW50LXdlYiJ9._rSVQrarS04e2bWqLcoACbL3Cdf6Aw14XKWyUa17uaA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nama\": \"Radam\",\r\n    \"jenis\": \"BCA\",\r\n    \"rekening\": \"12345678\",\r\n    \"alamat\": \"jakarta\",\r\n    \"karyawan\": {\r\n        \"id\": 1\r\n    }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/v1/idstar/rekening/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"v1",
+						"idstar",
+						"rekening",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Rekening",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsib2F1dGgyLXJlc291cmNlIl0sInVzZXJfbmFtZSI6InJhbWRhbi5udWdyYWhhQGlkc3Rhci5jby5pZCIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJleHAiOjE3MTE5NjQxMDYsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiIsIlJPTEVfUkVBRCIsIlJPTEVfV1JJVEUiXSwianRpIjoiN2Y2OTgzNDItZjBmOS00NThlLTlkM2MtMGRjZGE0MDhjMmI1IiwiY2xpZW50X2lkIjoibXktY2xpZW50LXdlYiJ9._rSVQrarS04e2bWqLcoACbL3Cdf6Aw14XKWyUa17uaA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"1\",\r\n    \"nama\": \"Radam\",\r\n    \"jenis\": \"BRI\",\r\n    \"rekening\": \"12345678\",\r\n    \"alamat\": \"jakarta\",\r\n    \"karyawan\": {\r\n        \"id\": \"1\"\r\n    }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/v1/idstar/rekening/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"v1",
+						"idstar",
+						"rekening",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Rekening",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsib2F1dGgyLXJlc291cmNlIl0sInVzZXJfbmFtZSI6InJhbWRhbi5udWdyYWhhQGlkc3Rhci5jby5pZCIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJleHAiOjE3MTE5NjQxMDYsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiIsIlJPTEVfUkVBRCIsIlJPTEVfV1JJVEUiXSwianRpIjoiN2Y2OTgzNDItZjBmOS00NThlLTlkM2MtMGRjZGE0MDhjMmI1IiwiY2xpZW50X2lkIjoibXktY2xpZW50LXdlYiJ9._rSVQrarS04e2bWqLcoACbL3Cdf6Aw14XKWyUa17uaA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8181/api/v1/idstar/rekening/list?page=0&size=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"v1",
+						"idstar",
+						"rekening",
+						"list"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Rekening by Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsib2F1dGgyLXJlc291cmNlIl0sInVzZXJfbmFtZSI6InJhbWRhbi5udWdyYWhhQGlkc3Rhci5jby5pZCIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJleHAiOjE3MTE5NjQxMDYsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiIsIlJPTEVfUkVBRCIsIlJPTEVfV1JJVEUiXSwianRpIjoiN2Y2OTgzNDItZjBmOS00NThlLTlkM2MtMGRjZGE0MDhjMmI1IiwiY2xpZW50X2lkIjoibXktY2xpZW50LXdlYiJ9._rSVQrarS04e2bWqLcoACbL3Cdf6Aw14XKWyUa17uaA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8181/api/v1/idstar/rekening/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"v1",
+						"idstar",
+						"rekening",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Rekening",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/v1/idstar/rekening/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"v1",
+						"idstar",
+						"rekening",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Training",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsib2F1dGgyLXJlc291cmNlIl0sInVzZXJfbmFtZSI6InJhbWRhbi5udWdyYWhhQGlkc3Rhci5jby5pZCIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJleHAiOjE3MTE5NjQxMDYsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiIsIlJPTEVfUkVBRCIsIlJPTEVfV1JJVEUiXSwianRpIjoiN2Y2OTgzNDItZjBmOS00NThlLTlkM2MtMGRjZGE0MDhjMmI1IiwiY2xpZW50X2lkIjoibXktY2xpZW50LXdlYiJ9._rSVQrarS04e2bWqLcoACbL3Cdf6Aw14XKWyUa17uaA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"1\",\r\n    \"tema\": \"JAVA DEVELOPER\",\r\n    \"pengajar\": \"RIKI ALDI PARI\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/v1/idstar/training/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"v1",
+						"idstar",
+						"training",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Training",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsib2F1dGgyLXJlc291cmNlIl0sInVzZXJfbmFtZSI6InJhbWRhbi5udWdyYWhhQGlkc3Rhci5jby5pZCIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJleHAiOjE3MTE5NjQxMDYsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiIsIlJPTEVfUkVBRCIsIlJPTEVfV1JJVEUiXSwianRpIjoiN2Y2OTgzNDItZjBmOS00NThlLTlkM2MtMGRjZGE0MDhjMmI1IiwiY2xpZW50X2lkIjoibXktY2xpZW50LXdlYiJ9._rSVQrarS04e2bWqLcoACbL3Cdf6Aw14XKWyUa17uaA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"1\",\r\n    \"tema\": \"JAVA DEVELOPER\",\r\n    \"pengajar\": \"RIKI ALDI\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/v1/idstar/training/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"v1",
+						"idstar",
+						"training",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Trainings",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsib2F1dGgyLXJlc291cmNlIl0sInVzZXJfbmFtZSI6InJhbWRhbi5udWdyYWhhQGlkc3Rhci5jby5pZCIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJleHAiOjE3MTE5NjQxMDYsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiIsIlJPTEVfUkVBRCIsIlJPTEVfV1JJVEUiXSwianRpIjoiN2Y2OTgzNDItZjBmOS00NThlLTlkM2MtMGRjZGE0MDhjMmI1IiwiY2xpZW50X2lkIjoibXktY2xpZW50LXdlYiJ9._rSVQrarS04e2bWqLcoACbL3Cdf6Aw14XKWyUa17uaA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8181/api/v1/idstar/training/list?page=0&size=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"v1",
+						"idstar",
+						"training",
+						"list"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Training by Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsib2F1dGgyLXJlc291cmNlIl0sInVzZXJfbmFtZSI6InJhbWRhbi5udWdyYWhhQGlkc3Rhci5jby5pZCIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJleHAiOjE3MTE5NjQxMDYsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiIsIlJPTEVfUkVBRCIsIlJPTEVfV1JJVEUiXSwianRpIjoiN2Y2OTgzNDItZjBmOS00NThlLTlkM2MtMGRjZGE0MDhjMmI1IiwiY2xpZW50X2lkIjoibXktY2xpZW50LXdlYiJ9._rSVQrarS04e2bWqLcoACbL3Cdf6Aw14XKWyUa17uaA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8181/api/v1/idstar/training/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"v1",
+						"idstar",
+						"training",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Training",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/v1/idstar/training/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"v1",
+						"idstar",
+						"training",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Karyawan Training",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsib2F1dGgyLXJlc291cmNlIl0sInVzZXJfbmFtZSI6InJhbWRhbi5udWdyYWhhQGlkc3Rhci5jby5pZCIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJleHAiOjE3MTE5NjQxMDYsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiIsIlJPTEVfUkVBRCIsIlJPTEVfV1JJVEUiXSwianRpIjoiN2Y2OTgzNDItZjBmOS00NThlLTlkM2MtMGRjZGE0MDhjMmI1IiwiY2xpZW50X2lkIjoibXktY2xpZW50LXdlYiJ9._rSVQrarS04e2bWqLcoACbL3Cdf6Aw14XKWyUa17uaA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"karyawan\":{\r\n        \"id\":\"1\"\r\n    },\r\n    \"training\":{\r\n        \"id\":\"1\"\r\n    },\r\n    \"tanggal\":\"2023-01-01 13:00:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/v1/idstar/karyawan-training/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"v1",
+						"idstar",
+						"karyawan-training",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Karyawan Training",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsib2F1dGgyLXJlc291cmNlIl0sInVzZXJfbmFtZSI6InJhbWRhbi5udWdyYWhhQGlkc3Rhci5jby5pZCIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJleHAiOjE3MTE5NjQxMDYsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiIsIlJPTEVfUkVBRCIsIlJPTEVfV1JJVEUiXSwianRpIjoiN2Y2OTgzNDItZjBmOS00NThlLTlkM2MtMGRjZGE0MDhjMmI1IiwiY2xpZW50X2lkIjoibXktY2xpZW50LXdlYiJ9._rSVQrarS04e2bWqLcoACbL3Cdf6Aw14XKWyUa17uaA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8181/api/v1/idstar/karyawan-training/list?page=0&size=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"v1",
+						"idstar",
+						"karyawan-training",
+						"list"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Karyawan Training by ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsib2F1dGgyLXJlc291cmNlIl0sInVzZXJfbmFtZSI6InJhbWRhbi5udWdyYWhhQGlkc3Rhci5jby5pZCIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJleHAiOjE3MTE5NjQxMDYsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiIsIlJPTEVfUkVBRCIsIlJPTEVfV1JJVEUiXSwianRpIjoiN2Y2OTgzNDItZjBmOS00NThlLTlkM2MtMGRjZGE0MDhjMmI1IiwiY2xpZW50X2lkIjoibXktY2xpZW50LXdlYiJ9._rSVQrarS04e2bWqLcoACbL3Cdf6Aw14XKWyUa17uaA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8181/api/v1/idstar/karyawan-training/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"v1",
+						"idstar",
+						"karyawan-training",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Karyawan Training",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/v1/idstar/karyawan-training/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"v1",
+						"idstar",
+						"karyawan-training",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Karyawan Training",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":7,\r\n    \"karyawan\":{\r\n        \"id\":\"6\"\r\n    },\r\n    \"training\":{\r\n        \"id\":\"2\"\r\n    },\r\n    \"tanggal\":\"2023-01-01 15:00:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/v1/idstar/karyawan-training/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"v1",
+						"idstar",
+						"karyawan-training",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"ramdan.nugraha@idstar.co.id\",\r\n    \"password\": \"rahasiadong\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/user-login/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"user-login",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"ramdan.nugraha@idstar.co.id\",\r\n    \"password\":\"rahasia\",\r\n    \"fullname\":\"Ramdan\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/user-register/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"user-register",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send OTP",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"ramdan.nugraha@idstar.co.id\",\r\n    \"password\":\"rahasiaa\",\r\n    \"fullname\":\"Ramdani\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/user-register/send-otp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"user-register",
+						"send-otp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Confirm by OTP",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"username\":\"ramdan.nugraha@idstar.co.id\",\r\n    \"password\":\"rahasiaa\",\r\n    \"fullname\":\"Ramdani\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/user-register/register-confirm-otp/767692",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"user-register",
+						"register-confirm-otp",
+						"767692"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Tymeleaf",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"ramdan.nugraha@idstar.co.id\",\r\n    \"password\":\"rahasia\",\r\n    \"fullname\":\"Ramdan\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/user-register/send-otp-tymeleaf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"user-register",
+						"send-otp-tymeleaf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Forget Password - 1. Send Email",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"email\":\"ramdan.nugraha@idstar.co.id\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/forget-password/send",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"forget-password",
+						"send"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Forget Password - 2. Validate by OTP",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"ramdan.nugraha@idstar.co.id\",\r\n    \"otp\" : \"767692\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/forget-password/validate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"forget-password",
+						"validate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Forget Password - 3. Change Password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"ramdan.nugraha@idstar.co.id\",\r\n    \"otp\" : \"767692\",\r\n    \"newPassword\" : \"rahasiadong\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/forget-password/change-password",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"forget-password",
+						"change-password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload File",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": [
+								"/C:/Users/user/Downloads/CAPTURE.png",
+								"/C:/Users/Ramdan Nugraha/Downloads/W2 Jan.jpg"
+							]
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/v1/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"v1",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show File",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8181/api/v1/showFile/file53892309122023113022.png",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"v1",
+						"showFile",
+						"file53892309122023113022.png"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login with Google",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8181/api/user-login/signin_google?accessToken=ChVyZWRpcmVjdF91cmlfbWlzbWF0Y2gSygEKQW5kYSB0aWRhayBkYXBhdCBsb2dpbiBrZSBhcGxpa2FzaSBpbmkga2FyZW5hIGFwbGlrYXNpIGluaSB0aWRhayBtZW1hdHVoaSBrZWJpamFrYW4gT0F1dGggMi4wIEdvb2dsZS4KCkppa2EgQW5kYSBhZGFsYWggZGV2ZWxvcGVyIGFwbGlrYXNpIHRlcnNlYnV0LCBkYWZ0YXJrYW4gVVJJIHBlbmdhbGloYW4gZGkgR29vZ2xlIENsb3VkIENvbnNvbGUuCiAgGm1odHRwczovL2RldmVsb3BlcnMuZ29vZ2xlLmNvbS9pZGVudGl0eS9wcm90b2NvbHMvb2F1dGgyL3dlYi1zZXJ2ZXIjYXV0aG9yaXphdGlvbi1lcnJvcnMtcmVkaXJlY3QtdXJpLW1pc21hdGNoIJADKi8KDHJlZGlyZWN0X3VyaRIfaHR0cDovL2xvY2FsaG9zdDo1NzUzMS9DYWxsYmFjazK-AggBEsoBCkFuZGEgdGlkYWsgZGFwYXQgbG9naW4ga2UgYXBsaWthc2kgaW5pIGthcmVuYSBhcGxpa2FzaSBpbmkgdGlkYWsgbWVtYXR1aGkga2ViaWpha2FuIE9BdXRoIDIuMCBHb29nbGUuCgpKaWthIEFuZGEgYWRhbGFoIGRldmVsb3BlciBhcGxpa2FzaSB0ZXJzZWJ1dCwgZGFmdGFya2FuIFVSSSBwZW5nYWxpaGFuIGRpIEdvb2dsZSBDbG91ZCBDb25zb2xlLgogIBptaHR0cHM6Ly9kZXZlbG9wZXJzLmdvb2dsZS5jb20vaWRlbnRpdHkvcHJvdG9jb2xzL29hdXRoMi93ZWItc2VydmVyI2F1dGhvcml6YXRpb24tZXJyb3JzLXJlZGlyZWN0LXVyaS1taXNtYXRjaA%3D%3D",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"user-login",
+						"signin_google"
+					],
+					"query": [
+						{
+							"key": "accessToken",
+							"value": "ChVyZWRpcmVjdF91cmlfbWlzbWF0Y2gSygEKQW5kYSB0aWRhayBkYXBhdCBsb2dpbiBrZSBhcGxpa2FzaSBpbmkga2FyZW5hIGFwbGlrYXNpIGluaSB0aWRhayBtZW1hdHVoaSBrZWJpamFrYW4gT0F1dGggMi4wIEdvb2dsZS4KCkppa2EgQW5kYSBhZGFsYWggZGV2ZWxvcGVyIGFwbGlrYXNpIHRlcnNlYnV0LCBkYWZ0YXJrYW4gVVJJIHBlbmdhbGloYW4gZGkgR29vZ2xlIENsb3VkIENvbnNvbGUuCiAgGm1odHRwczovL2RldmVsb3BlcnMuZ29vZ2xlLmNvbS9pZGVudGl0eS9wcm90b2NvbHMvb2F1dGgyL3dlYi1zZXJ2ZXIjYXV0aG9yaXphdGlvbi1lcnJvcnMtcmVkaXJlY3QtdXJpLW1pc21hdGNoIJADKi8KDHJlZGlyZWN0X3VyaRIfaHR0cDovL2xvY2FsaG9zdDo1NzUzMS9DYWxsYmFjazK-AggBEsoBCkFuZGEgdGlkYWsgZGFwYXQgbG9naW4ga2UgYXBsaWthc2kgaW5pIGthcmVuYSBhcGxpa2FzaSBpbmkgdGlkYWsgbWVtYXR1aGkga2ViaWpha2FuIE9BdXRoIDIuMCBHb29nbGUuCgpKaWthIEFuZGEgYWRhbGFoIGRldmVsb3BlciBhcGxpa2FzaSB0ZXJzZWJ1dCwgZGFmdGFya2FuIFVSSSBwZW5nYWxpaGFuIGRpIEdvb2dsZSBDbG91ZCBDb25zb2xlLgogIBptaHR0cHM6Ly9kZXZlbG9wZXJzLmdvb2dsZS5jb20vaWRlbnRpdHkvcHJvdG9jb2xzL29hdXRoMi93ZWItc2VydmVyI2F1dGhvcml6YXRpb24tZXJyb3JzLXJlZGlyZWN0LXVyaS1taXNtYXRjaA%3D%3D"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
